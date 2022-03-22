@@ -2,10 +2,10 @@ $("#update_code").submit(function (event) {
   event.preventDefault();
   var data = document.forms["myform"]["value"].value;
   var path = window.location.pathname;
-  var id = path.split("/")[1];
+  var id = path.split("/")[3];
   console.log("code", data);
   var request = {
-    url: `http://localhost:3000/${id}/update`,
+    url: `http://localhost:3000/${id}/savechanges`,
     method: "PUT",
     data: { newData: data },
   };

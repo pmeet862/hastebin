@@ -76,17 +76,19 @@ app.get("/:id/:password", async (req, res) => {
   }
 });
 
-app.get("/:id/update", async (req, res) => {
+app.get("/a/update/:id", async (req, res) => {
   const id = req.params.id;
+
   try {
     const document = await Document.findById(id);
+
     res.render("update", { value: document.value });
   } catch (error) {
     res.redirect(`/${id}`);
   }
 });
 
-app.put("/:id/update", async (req, res) => {
+app.put("/:id/savechanges", async (req, res) => {
   try {
     const id = req.params.id;
     console.log("req", req.params, req.body);
