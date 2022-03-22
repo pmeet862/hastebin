@@ -59,7 +59,7 @@ app.get("/:id", async (req, res) => {
     res.redirect("/");
   }
 });
-
+//commit test
 app.get("/:id/:password", async (req, res) => {
   const id = req.params.id;
   const pass = req.params.password;
