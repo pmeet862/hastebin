@@ -5,20 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/5.0.1/autosize.min.js" integrity="sha512-aBxhlAogg9r6Gtes+dsuqW6IQ4Ee0MtjexckbMNOVdxAfi5NSEd38BNEgFiaBWS6cl67r+8OImzxVKDdmswhnA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   
     <link rel="stylesheet" href="/styles.css" />
     <title>Document</title>
 </head>
 <body>
-    <form action="/save" method="POST">
-        <%- include("_buttons.ejs",{canSave:true} ) %> 
+    <form name="myform" id="update_code" >
+        <%- include("_buttons.ejs",{canUpdate:true} ) %> 
         <div class="wrapper">
             <div class="line-numbers">
                 &gt;
             </div>
-            <textarea autofocus name="value" rows="10"><%= locals.value %> </textarea>
-        </div>
-        <div>
-            <input type="password" name="password" placeholder="Password"/>
+            <textarea autofocus name="value"><%= locals.value %> </textarea>
         </div>
 
     </form>
@@ -26,5 +27,5 @@
      autosize(document.querySelector('textarea'));
     </script>
 </body>
-
+<script src="/index.js"></script>
 </html>
