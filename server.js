@@ -9,7 +9,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 mongoose
-  .connect("mongodb://scrapper:Coder%40040@13.126.232.194/scrapper")
+  .connect(process.env.DBURL)
   .then(() => {
     console.log("MongoDB is connected");
   })
